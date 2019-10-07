@@ -1,0 +1,34 @@
+#! /bin/sh
+# /etc/init.d/led-control
+
+### BEGIN INIT INFO
+# Provides:          led-control
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Change permissions on Raspberry Pi LEDs to allow them to be switched on and off
+# Description:       Raspberry Pi status LEDs are normally only controlled by root. This script enables them to be controlled by regular users.
+### END INIT INFO
+
+# If you want a command to always run, put it here
+
+# Carry out specific functions when asked to by the system
+case "$1" in
+  start)
+    echo "Enabling led-control"
+    # Raspberry Pi status LED
+    sh -c "echo none > /sys/class/leds/led0/trigger"
+    ;;
+  stop)
+    echo "Disabling led-control"
+    # reset source to  mmc0 (default)
+    sh -c "echo mmc0 > /sys/class/leds/led0/trigger"
+    ;;
+  *)
+    echo "Usage: /etc/init.d/led-control {start|stop}"
+    exit 1
+    ;;
+esac
+
+exit 0

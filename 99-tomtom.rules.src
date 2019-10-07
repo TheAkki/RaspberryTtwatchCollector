@@ -1,0 +1,4 @@
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="1390", ATTRS{idProduct}=="7474", SYMLINK+="tomtom", GROUP="usb", MODE="660", RUN+="/usr/bin/sudo -u pi PATH_TO_SCRIPT/sync.sh"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="1390", ATTRS{idProduct}=="7475", SYMLINK+="tomtom", GROUP="usb", MODE="660", RUN+="/usr/bin/sudo -u pi PATH_TO_SCRIPT/sync.sh"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="1390", ATTRS{idProduct}=="7477", SYMLINK+="tomtom", GROUP="usb", MODE="660", RUN+="/usr/bin/sudo -u pi PATH_TO_SCRIPT/sync.sh"
+
