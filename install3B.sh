@@ -17,7 +17,7 @@ ln -s led_off3B.sh led_off
 # Replace actual path in source file
 sed -e "s@PATH_TO_SCRIPT@$PWD@" 99-tomtom.rules.src > 99-tomtom.rules
 # copy modified files into udev rules
-cp 99-tomtom.rules /etc/udev/rules.d
+mv 99-tomtom.rules /etc/udev/rules.d/
 # reload settings
 udevadm control --reload-rules
 
